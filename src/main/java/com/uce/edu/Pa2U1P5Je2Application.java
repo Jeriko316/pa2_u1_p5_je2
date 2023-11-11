@@ -19,6 +19,7 @@ public class Pa2U1P5Je2Application implements CommandLineRunner {
 		System.out.println("cambio en la misma rama");
 		System.out.println("cambio en una nueva rama taller 3");
 		System.out.println("cambio en una nueva rama taller 4");
+		System.out.println("cambio en una nueva rama taller 42v");
 
 	}
 
