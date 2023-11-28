@@ -88,6 +88,8 @@ public class Pa2U1P5Je2Application implements CommandLineRunner {
 		
 		this.iTransferenciaService.realizar("1234","5678",new BigDecimal(50));
 		this.iTransferenciaService.realizar("1234","5678",new BigDecimal(10));
+		this.iTransferenciaService.realizar("1234","5678",new BigDecimal(18));
+		this.iTransferenciaService.realizar("1234","5678",new BigDecimal(1));
 
 		
 		 List<Transferencia> lista = this.iTransferenciaService.buscarTodos();
@@ -96,14 +98,14 @@ public class Pa2U1P5Je2Application implements CommandLineRunner {
 		int indice = 0;
 		for(Transferencia trans: lista) {
 			indice++;
-			System.out.println(indice + ":" + trans);
+			System.out.println("Numero de transacion ->"+indice + ":\n" + trans);
 		}
 		
-		CuentaBancaria ctaOrigen1 = this.bancariaService.buscar("1234"); 
+		/*CuentaBancaria ctaOrigen1 = this.bancariaService.buscar("1234"); 
 		System.out.println(ctaOrigen1);
 		
 		CuentaBancaria ctaDestino1 = this.bancariaService.buscar("5678"); 
-		System.out.println(ctaDestino1);
+		System.out.println(ctaDestino1);*/
 		
 	}
 
