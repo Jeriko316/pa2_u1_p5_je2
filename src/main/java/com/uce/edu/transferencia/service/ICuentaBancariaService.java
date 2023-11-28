@@ -1,5 +1,7 @@
 package com.uce.edu.transferencia.service;
 
+import java.math.BigDecimal;
+
 import com.uce.edu.transferencia.repository.modelo.CuentaBancaria;
 
 public interface ICuentaBancariaService {
@@ -9,5 +11,6 @@ public interface ICuentaBancariaService {
 	public void guardar(CuentaBancaria cuentaBancaria);
 	public void actualizar(CuentaBancaria cuentaBancaria);
 	public void eliminar(String numero);
+	public void depositar(String numeroCta, BigDecimal monto);
 	
 }

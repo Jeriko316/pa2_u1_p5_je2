@@ -28,6 +28,19 @@ public class CuentaBancariaRepositoryImpl implements ICuentaBancariaRepository {
 	}
 
 	@Override
+	public CuentaBancaria seleccionarEliminar(String numero) {
+		// TODO Auto-generated method stub
+		for (CuentaBancaria cuenta : base) {
+			if(cuenta.getNumero().equals(numero)) {
+		
+				return cuenta;
+			}
+		}
+		return null;
+	}
+	
+	
+	@Override
 	public void insertar(CuentaBancaria cuentaBancaria) {
 		// TODO Auto-generated method stub
 		
@@ -44,7 +57,8 @@ public class CuentaBancariaRepositoryImpl implements ICuentaBancariaRepository {
 	@Override
 	public void eliminar(String numero) {
 		// TODO Auto-generated method stub
-		
+		CuentaBancaria cuentaBancaria = this.seleccionarEliminar(numero);
+		base.remove(cuentaBancaria);
 	}
 
 

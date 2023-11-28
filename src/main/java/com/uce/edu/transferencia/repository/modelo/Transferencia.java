@@ -13,8 +13,15 @@ public class Transferencia {
 	private BigDecimal monto;
 	private CuentaBancaria cuentaOrigen;
 	private CuentaBancaria cuentaDestino;
+	private Integer contador;
 	
 	
+	public Integer getContador() {
+		return contador;
+	}
+	public void setContador(Integer contador) {
+		this.contador = contador;
+	}
 	public LocalDateTime getFecha() {
 		return fecha;
 	}
@@ -49,7 +56,7 @@ public class Transferencia {
 	@Override
 	public String toString() {
 		return "Transferencia [numero=" + numero + ", fecha=" + fecha + ", monto=" + monto + ", cuentaOrigen="
-				+ cuentaOrigen + ", cuentaDestino=" + cuentaDestino + "]";
+				+ cuentaOrigen + ", cuentaDestino=" + cuentaDestino + "numero de transferencia: "+ "]";
 	}
 	
 	

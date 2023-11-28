@@ -1,6 +1,8 @@
 package com.uce.edu;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -8,6 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.uce.edu.transferencia.repository.modelo.CuentaBancaria;
+import com.uce.edu.transferencia.repository.modelo.Transferencia;
 import com.uce.edu.transferencia.service.ICuentaBancariaService;
 import com.uce.edu.transferencia.service.ITransferenciaService;
 
@@ -25,6 +28,9 @@ public class Pa2U1P5Je2Application implements CommandLineRunner {
 	
 	@Autowired // aqui damos la orden y decimos de q clase debe elegir 
 	private Materia materia2;*/
+
+
+	
 	
 	@Autowired
 	private ITransferenciaService iTransferenciaService;
@@ -77,16 +83,27 @@ public class Pa2U1P5Je2Application implements CommandLineRunner {
 		//System.out.println(ctaOrigen);
 		//System.out.println(ctaDestino);
 		
+		
+		
+		
+		this.iTransferenciaService.realizar("1234","5678",new BigDecimal(50));
+		this.iTransferenciaService.realizar("1234","5678",new BigDecimal(10));
+
+		
+		 List<Transferencia> lista = this.iTransferenciaService.buscarTodos();
+
+		//Contruir un reporte del estado de cuenta de todas las transferencia
+		int indice = 0;
+		for(Transferencia trans: lista) {
+			indice++;
+			System.out.println(indice + ":" + trans);
+		}
+		
 		CuentaBancaria ctaOrigen1 = this.bancariaService.buscar("1234"); 
 		System.out.println(ctaOrigen1);
 		
 		CuentaBancaria ctaDestino1 = this.bancariaService.buscar("5678"); 
 		System.out.println(ctaDestino1);
-		
-		
-
-
-		
 		
 	}
 
