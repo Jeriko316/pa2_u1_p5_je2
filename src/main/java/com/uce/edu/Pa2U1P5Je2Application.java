@@ -32,11 +32,29 @@ public class Pa2U1P5Je2Application implements CommandLineRunner {
 
 	
 	
-	@Autowired
+	
 	private ITransferenciaService iTransferenciaService;
+	
+	//inyeccion por cosntructor
+	/*@Autowired
+	public Pa2U1P5Je2Application(ITransferenciaService iTransServi) { //necesita recibir por argumento dek constructir debe ser el bin que se desea inyectar
+		this.iTransferenciaService = iTransServi;  //le seteamos y finalizamos con la anotacion autowired
+		
+	}*/
+	
+	//inyeccion por metodo
+	@Autowired
+	public void setiTransferenciaService(ITransferenciaService iTransferenciaService) {
+		this.iTransferenciaService = iTransferenciaService;
+	}
+	
+	
 	
 	@Autowired
 	private ICuentaBancariaService bancariaService;
+
+
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(Pa2U1P5Je2Application.class, args);
