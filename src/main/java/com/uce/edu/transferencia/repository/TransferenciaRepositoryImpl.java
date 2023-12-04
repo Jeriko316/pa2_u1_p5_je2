@@ -1,7 +1,6 @@
 package com.uce.edu.transferencia.repository;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -39,7 +38,7 @@ public class TransferenciaRepositoryImpl implements ITranferenciaRepository {
 	@Override
 	public void eliminar(String numero) {
 		// TODO Auto-generated method stub
-		
+	   this.eliminar(numero);
 	}
 
 	@Override

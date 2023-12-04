@@ -12,17 +12,17 @@ import com.uce.edu.transferencia.repository.modelo.CuentaBancaria;
 @Repository
 public class BodegaRepositoryImpl implements IBodegaRepository {
 
-	private static List<Bodega> bodega = new ArrayList<Bodega>();
+	private static List<Bodega> listaBodega = new ArrayList<Bodega>();
 	
 	@Override
 	public Bodega seleccionar(String codigo) {
-		for (Bodega bod : bodega) {
+		for (Bodega bod : listaBodega) {
 			if(bod.getCodigo().equals(codigo)) {
-				Bodega bode = new Bodega();
-				bode.setDireccion(bode.getDireccion());
-				bode.setNombre(bode.getNombre());
-				bode.setCapacidad(bode.getCapacidad());
-				return bode;
+				Bodega bodega = new Bodega();
+				bodega.setDireccion(bod.getDireccion());
+				bodega.setNombre(bod.getNombre());
+				bodega.setCapacidad(bod.getCapacidad());
+				return bod;
 			}
 		}
 		return null;
@@ -30,8 +30,8 @@ public class BodegaRepositoryImpl implements IBodegaRepository {
 
 	@Override
 	public void insertar(Bodega bodega) {
-		
-		
+	  
+		listaBodega.add(bodega);
 	}
 
 	@Override
